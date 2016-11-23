@@ -83,8 +83,18 @@ class DatabaseSeeder extends Seeder
 		// Generate LaraAdmin Default Configurations
 		
 		$laconfig = new LAConfigs;
-		$laconfig->key = "sitename";
-		$laconfig->value = "LaraAdmin 1.0";
+		$laconfig->key = "site_link";
+		$laconfig->value = "";
+		$laconfig->save();
+		
+		$laconfig = new LAConfigs;
+		$laconfig->key = "site_maker";
+		$laconfig->value = "";
+		$laconfig->save();
+		
+		$laconfig = new LAConfigs;
+		$laconfig->key = "sitename_part1";
+		$laconfig->value = "Lara";
 		$laconfig->save();
 
 		$laconfig = new LAConfigs;
