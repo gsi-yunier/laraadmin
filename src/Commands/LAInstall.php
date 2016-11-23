@@ -62,6 +62,7 @@ class LAInstall extends Command
 				$db_data['db'] = $this->ask('Database Name', 'laraadmin1');
 				$db_data['dbuser'] = $this->ask('Database User', 'root');
 				$dbpass = $this->ask('Database Password', false);
+				$db_data['dbhost'] = $this->ask('Database Host', '127.0.0.1');
 
 				if($dbpass !== FALSE) {
 					$db_data['dbpass'] = $dbpass;
@@ -81,9 +82,11 @@ class LAInstall extends Command
 				config(['database.connections.'.$default_db_conn.'.database' => $db_data['db']]);
 				config(['database.connections.'.$default_db_conn.'.username' => $db_data['dbuser']]);
 				config(['database.connections.'.$default_db_conn.'.password' => $db_data['dbpass']]);
+				config(['database.connections.'.$default_db_conn.'.host' => $db_data['dbhost']]);
 				LAHelper::setenv("DB_DATABASE", $db_data['db']);
 				LAHelper::setenv("DB_USERNAME", $db_data['dbuser']);
 				LAHelper::setenv("DB_PASSWORD", $db_data['dbpass']);
+				LAHelper::setenv("DB_HOST", $db_data['dbhost']);
 			}
 			
 			if(env('CACHE_DRIVER') != "array") {
