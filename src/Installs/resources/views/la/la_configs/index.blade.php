@@ -35,6 +35,17 @@
 				<input type="text" class="form-control" placeholder="Lara" name="sitename" value="{{$configs->sitename}}">
 			</div>
 			<div class="form-group">
+				<label>Site Maker</label>
+				<input type="text" class="form-control" placeholder="Who makes this website" name="sitemaker" value="{{$configs->site_maker}}">
+			</div>
+
+			<div class="form-group">
+				<label>Site URL</label>
+				<input type="text" class="form-control" placeholder="domain.com" name="site_link" value="{{$configs->site_link}}">
+			</div>	
+			
+			
+			<div class="form-group">
 				<label>Sitename First Word</label>
 				<input type="text" class="form-control" placeholder="Lara" name="sitename_part1" value="{{$configs->sitename_part1}}">
 			</div>
