@@ -43,6 +43,7 @@ Online Code Editor:
 ### Installation & Documentation
 
 Documentation for the LaraAdmin can be found on the [LaraAdmin website](http://laraadmin.com/documentation).
+[Fork install](http://laraadmin.com/docs/1.0/extending)
 
 ### Contributing
 
