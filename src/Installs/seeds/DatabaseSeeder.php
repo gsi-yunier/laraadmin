@@ -92,6 +92,12 @@ class DatabaseSeeder extends Seeder
 		$laconfig->value = "";
 		$laconfig->save();
 		
+		
+		$laconfig = new LAConfigs;
+		$laconfig->key = "sitename";
+		$laconfig->value = "";
+		$laconfig->save();
+		
 		$laconfig = new LAConfigs;
 		$laconfig->key = "sitename_part1";
 		$laconfig->value = "Lara";
