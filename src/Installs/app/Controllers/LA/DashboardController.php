@@ -33,6 +33,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('la.dashboard');
+       $senders = ContactUS::All();
+   
+        return view('la.dashboard',compact('senders') );
     }
 }
