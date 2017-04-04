@@ -427,6 +427,9 @@
 
             </section><!-- right col -->
           </div><!-- /.row (main row) -->
+	  <div class="row">
+	  	@include('la.layouts.partials.dashboard.showusertable')
+	  </div>
 
         </section><!-- /.content -->
 @endsection
@@ -480,7 +483,7 @@
 (function($) {
 	$('body').pgNotification({
 		style: 'circle',
-		title: 'LaraAdmin',
+		title: '{{ LAConfigs::getByKey('site_link') }}',
 		message: "Welcome to LaraAdmin...",
 		position: "top-right",
 		timeout: 0,
