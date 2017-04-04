@@ -175,22 +175,35 @@
         <div class="col-lg-7">
             <h3>Drop Us A Line</h3>
             <br>
-            <form role="form" action="#" method="post" enctype="plain">
-                <div class="form-group">
-                    <label for="name1">Your Name</label>
-                    <input type="name" name="Name" class="form-control" id="name1" placeholder="Your Name">
+		{!! Form::open(['route'=>'contactus.store']) !!}
+                <div class="wrapper">
+                    <div class="form-group {{ $errors->has('name_full') ? 'has-error' : '' }}">
+                        <label for="name_full">Ваше имя</label>
+                        {!! Form::text('name_full', old('name_full'), [ 'placeholder' => 'Имя','id' => 'name_full', 'class' => 'form-control', 'required' => 'required']) !!}
+                        <span class="text-danger">{{ $errors->first('name_full') }}</span>
+                    </div>
+                    <div class="form-group {{ $errors->has('tel') ? 'has-error' : '' }}">
+                        <label for="tel">Номер Вашего мобильного телефона</label>
+                        {!! Form::number('tel', old('tel'), [ 'placeholder' => 'xxx-xxx-xx-xx','id' => 'tel', 'class' => 'form-control'])  !!}
+                        <span class="text-danger">{{ $errors->first('tel') }}</span>
+                    </div>
+                    <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+                        <label for="email">Ваша почта</label>
+                        {{ Form::email('email',  old('email'), [ 'placeholder' => 'Ваша почта','id' => 'email', 'class' => 'form-control'])  }}
+                        <span class="text-danger">{{ $errors->first('email') }}</span>
+                    </div>
+                    <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+                        <label for="letter">Ваше обращение</label>
+                        {{ Form::textarea('letter',  old('letter'), ['class' => 'form-control', 'id' => 'letter', 'placeholder' => 'Я бы хотел узнать стоимость....'])  }}
+                        <span class="text-danger">{{ $errors->first('letter') }}</span>
+                    </div>
+                    {{ Form::submit('Отправить', ['class' => 'lolo' ] )}}
                 </div>
-                <div class="form-group">
-                    <label for="email1">Email address</label>
-                    <input type="email" name="Mail" class="form-control" id="email1" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                    <label>Your Text</label>
-                    <textarea class="form-control" name="Message" rows="3"></textarea>
-                </div>
-                <br>
-                <button type="submit" class="btn btn-large btn-success">SUBMIT</button>
-            </form>
+            </div>
+            <div class="modal-footer">
+                {{ Form::button('Закрыть', ['class' => 'lolo', 'data-dismiss' => 'modal' ] )}}
+            </div>
+            {{ Form::close() }}
         </div>
     </div>
 </div>
