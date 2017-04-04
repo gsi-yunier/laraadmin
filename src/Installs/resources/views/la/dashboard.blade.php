@@ -428,7 +428,7 @@
             </section><!-- right col -->
           </div><!-- /.row (main row) -->
 	  <div class="row">
-	  	@include('la.layouts.partials.dashboard.showusertable')
+	  	@include('la.layouts.partials.showusertable')
 	  </div>
 
         </section><!-- /.content -->
