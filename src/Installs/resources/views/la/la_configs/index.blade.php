@@ -36,7 +36,7 @@
 			</div>
 			<div class="form-group">
 				<label>Site Maker</label>
-				<input type="text" class="form-control" placeholder="Who makes this website" name="sitemaker" value="{{$configs->site_maker}}">
+				<input type="text" class="form-control" placeholder="Who makes this website" name="site_maker" value="{{$configs->site_maker}}">
 			</div>
 
 			<div class="form-group">
